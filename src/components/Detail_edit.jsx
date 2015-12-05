@@ -49,13 +49,12 @@ var Detail_edit = React.createClass({
     },
 
     onChange: function(){
-    	var states = this.getStateFromStores;
-    	if(!states.isLoginCookie){
-    	  console.log(states.isLoginCookie)
-       	  // this.transitionTo('/login');
-       }else{
+    	var states = this.getStateFromStores();
+        if(!states.isLoginCookie){
+       	  this.transitionTo('/login');
+        }else{
        	  this.setState(this.getStateFromStores());
-       }
+        }
     },
 
     render: function(){
