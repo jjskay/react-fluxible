@@ -19,6 +19,7 @@ app.registerStore(require('./stores/SliderStore'));
 app.registerStore(require('./stores/DataStore'));
 app.registerStore(require('./stores/DetailStore'));
 app.registerStore(require('./stores/TabStore'));
+app.registerStore(require('./stores/EditStore'));
 
 module.exports = app;
 

@@ -11,6 +11,7 @@ var NotFound = require('./components/NotFound');
 var IndexSlider=require('./components/UI/IndexSlider');
 var Reg = require('./components/Reg');
 var Detail = require('./components/Detail');
+var Detail_edit = require('./components/Detail_edit');
 
 var routes = (
          <Route name="app" handler={App} path="/">
@@ -19,6 +20,7 @@ var routes = (
              <Route name="list" handler={List}  path="/list" />
              <Route name="reg" handler={Reg}  path="/reg" />
              <Route name="detail" handler={Detail} path="/detail/:id" />
+             <Route name="detail_edit" handler={Detail_edit} path="/detail_edit/:id" />
              <NotFoundRoute handler={NotFound} name="not-found" />
          </Route>
 	)

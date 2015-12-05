@@ -61,12 +61,19 @@ var Detail = React.createClass({
                <div>
                   <p>{this.state.cont.text}</p>
                </div>
+               {this.editButton()}
                <p>
                   <Link to="/list">返回列表</Link>
                </p>
                <TabSelect />
             </div>
         )
+  },
+
+  editButton: function(){
+    return (
+            <Link to="detail_edit" params={{id:this.state.cont.id}} >编辑</Link>
+    )
   }
 })
 

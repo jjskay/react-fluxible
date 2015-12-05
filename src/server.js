@@ -60,6 +60,8 @@ fetchrPlugin.registerService(api.user)
 fetchrPlugin.registerService(api.list)
 fetchrPlugin.registerService(api.detail)
 fetchrPlugin.registerService(api.reg)
+fetchrPlugin.registerService(api.edit)
+
 
 server.use(useragent.express());
 
