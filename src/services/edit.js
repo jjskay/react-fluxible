@@ -4,8 +4,9 @@ var db = require('./db');
 var EditService = {
     name: 'edit',
     update: function(req, resource, params, body, config, callback){
+    	console.log(1)
         if(params){
-        	callback(err, true);
+        	callback(null, true);
         }else{
         	callback('Edit Fail!',null);
         }

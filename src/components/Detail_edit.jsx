@@ -60,9 +60,9 @@ var Detail_edit = React.createClass({
     render: function(){
     	return (
     		<div>
-    			<p><input type="text" value={this.state.detail.title} /></p>
+    			<p><input ref="textTitle" type="text" value={this.state.detail.title} /></p>
     			<div>
-    				<textarea>{this.state.detail.text}</textarea>
+    				<textarea ref="textCont">{this.state.detail.text}</textarea>
     			</div>
     			{this.button()}
     		</div>
@@ -74,12 +74,24 @@ var Detail_edit = React.createClass({
     		<div>
     			<button onClick={this.editSub}>提交</button>
     			<Link to="/list">返回列表</Link>
+    			{this.editSuccess()}
     		</div>
     	)
     },
 
     editSub: function(){
-    	console.log(1)
+    	var obj = {};
+    	obj.title = React.findDOMNode(this.refs.textTitle).value;
+    	obj.cont = React.findDOMNode(this.refs.textCont).value;
+    	context.executeAction(EditAction.EditContent, {obj:obj})
+    },
+
+    editSuccess: function(){
+    	if(this.state.editSucc){
+    		 return (
+                <span>编辑成功！</span>
+    		 )
+    	}
     }
 })
 
