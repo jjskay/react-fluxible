@@ -5,16 +5,16 @@ var DataStore = require('../stores/DataStore');
 var AuthActions = {};
 
 AuthActions.LoadSession =  function(context, payload, done){
-
+    console.log(context.service)
 	var token = context.cookie.get('uuid')
 
 	context.dispatch('LOAD_SESSION', token);
-	
+
 	done();
 }
 
 AuthActions.SignIn = function(context, payload, done){
-	
+
 	context.service.update('user', payload, {}, function(err, user){
         	if(user){
 				context.dispatch('SIGN_IN_SUCCESS', user);
@@ -26,7 +26,7 @@ AuthActions.SignIn = function(context, payload, done){
 	        }
 	        done();
 	})
-	
+
 }
 
 AuthActions.regIng = function(context, payload, done){
@@ -46,7 +46,7 @@ AuthActions.regIng = function(context, payload, done){
 			done();
 		})
 	},1000)
-	
+
 }
 
 AuthActions.signOut = function(context, payload, done){

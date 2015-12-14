@@ -1,4 +1,4 @@
-// var Immutable = require('immutable'); 
+// var Immutable = require('immutable');
 var express = require('express');
 // var db = require('./db');
 // var _ = require('lodash');
@@ -8,7 +8,7 @@ var fs = require('fs');
 var UserService = {
     name: 'user',
     read: function (req, resource, params, config, callback) {
-       
+
         callback(null,{});
     },
     update: function(req, resource, params, body, config, callback){
@@ -27,7 +27,7 @@ var UserService = {
             callback(null, userinfo);
         })
     }
-  
+
 }
 
 
